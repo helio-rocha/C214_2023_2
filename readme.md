@@ -1,10 +1,3 @@
-# Consulta de filmes
+# C124 - Engenharia de Software
 
-Projeto em Javascript para registro de filmes para a disciplina de Engenharia de Software
-
-## Funcionalidades
-
-* Cadastro de Filmes
-* Avaliação de filmes cadastrados
-* Marcar filmes como assistidos
-* Visualizar os filmes cadastrados
+Repositório para os códigos desenvolvidos na disciplina de C214 - Engenharia de Software no 2° semestre de 2023

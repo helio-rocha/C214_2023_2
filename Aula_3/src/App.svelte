@@ -1,10 +1,51 @@
 <script>
-	export let name;
+	// Variáveis de estado
+	let peso = 0;      // Peso do usuário
+	let altura = 0;    // Altura do usuário
+	let imc = 0;       // Índice de Massa Corporal
+
+
+	// Função para calcular o IMC
+	function calcularIMC() 
+	{
+		if (peso > 0 && altura > 0) 
+		{
+			imc = (peso / Math.pow(altura, 2)).toFixed(2);
+		} 
+
+		else 
+		{
+			imc = 0;
+		}
+	}
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>Calculadora de IMC</h1>
+	<label>
+		Peso (kg): <input type="number" bind:value={peso} on:input={calcularIMC} />
+	</label>
+	<label>
+		Altura (m): <input type="number" bind:value={altura} on:input={calcularIMC} />
+	</label>
+	
+	{#if imc > 0}
+		<p>Seu IMC é {imc}</p>
+		{#if imc < 18.5}
+		<p id="abaixo">Abaixo do peso</p>
+		{:else if imc < 24.9}
+		<p id="ideal">Peso ideal (parabéns)</p>
+		{:else if imc < 29.9}
+		<p id="acima">Levemente acima do peso</p>
+		{:else if imc < 34.9}
+		<p id="obeso1">Obesidade I</p>
+		{:else if imc < 39.9}
+		<p id="obeso2">Obesidade II (severa)</p>
+		{:else}
+		<p id="obeso3">Obesidade III (mórbida)</p>
+		{/if}
+	{/if}
+	
 </main>
 
 <style>
@@ -27,4 +68,43 @@
 			max-width: none;
 		}
 	}
+	#abaixo {
+			color: #cff302;
+			text-transform: uppercase;
+			font-size: 2em;
+		}
+
+	#ideal {
+			color: #00fc15;
+			text-transform: uppercase;
+			font-size: 3em;
+			/* font-weight: 100; */
+		}
+
+	#acima {
+			color: #e4e00afd;
+			text-transform: uppercase;
+			font-size: 4em;
+			/* font-weight: 100; */
+		}
+
+	#obeso1 {
+			color: #ffd000;
+			text-transform: uppercase;
+			font-size: 5em;
+			/* font-weight: 100; */
+		}
+
+	#obeso2 {
+			color: #ff7300;
+			font-size: 6em;
+			/* font-weight: 100; */
+		}
+
+	#obeso3 {
+			color: #ff0000;
+			text-transform: uppercase;
+			font-size: 7em;
+			/* font-weight: 100; */
+		}
 </style>
