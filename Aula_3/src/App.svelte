@@ -70,41 +70,31 @@
 	}
 	#abaixo {
 			color: #cff302;
-			text-transform: uppercase;
 			font-size: 2em;
 		}
 
 	#ideal {
 			color: #00fc15;
-			text-transform: uppercase;
 			font-size: 3em;
-			/* font-weight: 100; */
 		}
 
 	#acima {
 			color: #e4e00afd;
-			text-transform: uppercase;
 			font-size: 4em;
-			/* font-weight: 100; */
 		}
 
 	#obeso1 {
 			color: #ffd000;
-			text-transform: uppercase;
 			font-size: 5em;
-			/* font-weight: 100; */
 		}
 
 	#obeso2 {
 			color: #ff7300;
 			font-size: 6em;
-			/* font-weight: 100; */
 		}
 
 	#obeso3 {
 			color: #ff0000;
-			text-transform: uppercase;
 			font-size: 7em;
-			/* font-weight: 100; */
 		}
 </style>
