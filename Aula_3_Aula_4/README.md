@@ -6,3 +6,7 @@ Projeto de calculadora de IMC em Javascript utilizando o framework Svelte para a
 
 * Calcular o IMC com base no peso e altura informados
 * Mostra em qual grupo de peso a pessoa se encaixa com base no IMC calculado
+
+## Dependências
+
+* Svelte-Icons - Permite a utilização de ícones no Svelte

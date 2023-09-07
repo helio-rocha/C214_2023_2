@@ -1,4 +1,7 @@
 <script>
+    import FaBalanceScale from 'svelte-icons/fa/FaBalanceScale.svelte'
+	import GiBodyHeight from 'svelte-icons/gi/GiBodyHeight.svelte'
+
 	// Variáveis de estado
 	let peso = 0;      // Peso do usuário
 	let altura = 0;    // Altura do usuário
@@ -23,10 +26,16 @@
 <main>
 	<h1>Calculadora de IMC</h1>
 	<label>
-		Peso (kg): <input type="number" bind:value={peso} on:input={calcularIMC} />
+		<div class='input_container'>
+			<div class='icon'><FaBalanceScale/></div>
+			Peso (kg):  <input type="number" bind:value={peso} on:input={calcularIMC} />
+		</div>
 	</label>
 	<label>
-		Altura (m): <input type="number" bind:value={altura} on:input={calcularIMC} />
+		<div class='input_container'>
+			<div class='icon'><GiBodyHeight/></div>
+			Altura (m):  <input type="number"  bind:value={altura} on:input={calcularIMC} /> 
+		</div> 
 	</label>
 	
 	{#if imc > 0}
@@ -45,7 +54,6 @@
 		<p id="obeso3">Obesidade III (mórbida)</p>
 		{/if}
 	{/if}
-	
 </main>
 
 <style>
@@ -97,4 +105,18 @@
 			color: #ff0000;
 			font-size: 7em;
 		}
+
+	.icon {
+		color: blue;
+        width: 32px;
+        height: 32px;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+
+	.input_container {
+		display: flex;
+        align-items: center;
+		justify-content: center;
+	}
 </style>
