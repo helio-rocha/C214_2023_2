@@ -20,15 +20,15 @@ jobs:
 
       - name: Dependências
         run: npm install
-        
-      - name: Acessar diretório correto
-        run: cd Aula_5
 
       - name: Verificando diretório
         run: pwd
 
       - name: Verificando pastas
         run: ls
+        
+      - name: Acessar diretório correto
+        run: cd Aula_5
 
       - name: Testes
         run: npm test
