@@ -1,0 +1,28 @@
+name: Teste do projeto
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Dependências
+        run: npm install
+        
+      - name: Acessar diretório correto
+        run: cd Aula_5
+
+      - name: Testes
+        run: npm test
